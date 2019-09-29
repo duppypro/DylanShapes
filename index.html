@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: rgb(80, 55, 80); display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="480" height="320"></canvas>
+<div>
+    <italic>Dylan</italic>Dylan says hello
+</div>
+<canvas id="dbgCanvas" width="480" height="320"></canvas>
+
+<script>
+	// JavaScript code goes here
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var dbg_canvas = document.getElementById("dbgCanvas");
+        var dbg_ctx = dbg_canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(240, 160, 150, 90);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        ctx.closePath();
+        // draw to the debug canvas
+        
+        dbg_ctx.beginPath();
+            dbg_ctx.arc(240, 160, 150, 0, Math.PI * 2, false);
+            dbg_ctx.fillStyle = "green";
+            dbg_ctx.stroke();
+            dbg_ctx.closePath();
+    dbg_ctx.beginPath();
+    dbg_ctx.arc(320, 110, 50, 0, Math.PI * 2, false);
+    dbg_ctx.fillStyle = "green";
+    dbg_ctx.stroke();
+    dbg_ctx.closePath(); dbg_ctx.beginPath();
+        dbg_ctx.arc(160, 110, 50, 0, Math.PI * 2, false);
+        dbg_ctx.fillStyle = "green";
+        dbg_ctx.stroke();
+        dbg_ctx.closePath();
+        dbg_ctx.beginPath();
+            dbg_ctx.rect(240-150/2, 180, 150, 90);
+            dbg_ctx.fillStyle = "blue";
+            dbg_ctx.fill();
+            dbg_ctx.closePath();
+</script>
+
+</body>
+</html>
